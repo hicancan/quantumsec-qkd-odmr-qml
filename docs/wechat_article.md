@@ -42,7 +42,7 @@ QKD 将安全性锚定在 **“物理定律”** 上：海森堡测不准原理�
 $$ r \approx 1 - H(X|Y) - H(X|E) $$
 
 在标准假设下，这简化为著名的公式：
-$$ \text{key\_fraction} = \max\left(0, 1 - 2H_2(Q)\right) $$
+$$ \text{key-fraction} = \max\left(0, 1 - 2H_2(Q)\right) $$
 
 其中 $H_2(p)$ 是香农二元熵：
 $$ H_2(p) = -p\log_2 p -(1-p)\log_2(1-p) $$
