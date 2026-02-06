@@ -1,0 +1,14 @@
+numpy
+scipy
+pandas
+matplotlib
+scikit-learn
+sympy
+qutip
+pennylane
+qiskit
+qiskit-aer
+cirq
+cudaq
+pytest
+joblib

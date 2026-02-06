@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+.env/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+
+# OS Generated
+.DS_Store
+Thumbs.db
+
+# Project Specific
+# Ignore verification results and benchmarks
+results/
+
+# Ignore local run logs if any
+*.log
+
+# Note: We usually keep docs/figures ensuring the repo has images for README.
+# If you want to ignore generated figures, uncomment below:
+# docs/figures/*.png
+# docs/wechat_article.md
