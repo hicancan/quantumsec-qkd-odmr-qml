@@ -18,8 +18,8 @@
 ## 1. 科学意义：物理层面的安全博弈
 
 ### 1.1 信任的锚点转移
-传统公钥密码（RSA/ECC）的安全性依赖于**“算力假设”**（分解大数很难）。但 Shor 算法的出现让这一假设在理论上崩塌。
-QKD 将安全性锚定在**“物理定律”**上：海森堡测不准原理保证了，窃听者 (Eve) 对量子态的任何测量都会不可避免地扰动统计结构。
+传统公钥密码（RSA/ECC）的安全性依赖于 **“算力假设”**（分解大数很难）。但 Shor 算法的出现让这一假设在理论上崩塌。
+QKD 将安全性锚定在 **“物理定律”** 上：海森堡测不准原理保证了，窃听者 (Eve) 对量子态的任何测量都会不可避免地扰动统计结构。
 
 ### 1.2 为什么需要信息安全 × 量子测量协作？
 *   **量子测量**（如 BB84 的基测量，ODMR 的光谱测量）提供了物理世界的原始读数。
@@ -134,13 +134,11 @@ $$ K(\mathbf{x}, \mathbf{y}) = |\langle\psi(\mathbf{x})|\psi(\mathbf{y})\rangle|
 *   **PennyLane vs Qiskit**: 最大绝对误差 **0.000 (精确一致)**
 *   **PennyLane vs Cirq**: 最大绝对误差 **$1.75 \times 10^{-7}$** (浮点误差级别)
 
-这证明了我们的算法实现是**数学上严谨且后端无关的**，具备极高的学术复现价值。
-
----
+这证明了量子算法实现是**数学上严谨且后端无关的**，具备学术复现价值。
 
 ---
 
 ### 主要参考文献
-1.  **Purohit, K., & Vyas, A. K. (2025).** Quantum key distribution through quantum machine learning: a research review. *Frontiers in Quantum Science and Technology*. (即本文原点)
+1.  **Purohit, K., & Vyas, A. K. (2025).** Quantum key distribution through quantum machine learning: a research review. *Frontiers in Quantum Science and Technology*.
 2.  **Shor, P. W., & Preskill, J. (2000).** Simple proof of security of the BB84 quantum key distribution protocol.
 3.  **Havlíček, V., et al. (2019).** Supervised learning with quantum-enhanced feature spaces. *Nature*.
