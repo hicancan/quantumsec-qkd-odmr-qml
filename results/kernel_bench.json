@@ -1,0 +1,7 @@
+{
+  "kernel_bench": {
+    "cudaq_available": false,
+    "max_abs_diff_pl_vs_cirq": 1.7474430158426202e-07,
+    "max_abs_diff_pl_vs_qiskit": 0.0
+  }
+}

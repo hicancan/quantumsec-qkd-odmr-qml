@@ -18,7 +18,7 @@ from qmsl.models.qsvm import train_qsvm_precomputed
 from qmsl.kernels.backend_kernel_interface import KernelConfig
 from qmsl.eval.metrics import evaluate_binary, fpr_at_tpr
 from qmsl.eval.plots import save_confusion_matrix, save_roc_curve, save_scatter, save_line
-from qmsl.reports.build_wechat_md import build_wechat_article
+
 
 def cmd_env_check(_args) -> None:
     import platform, sys
@@ -255,19 +255,7 @@ def cmd_run_all(args) -> None:
     metrics = merge_dicts(bb84, odmr, kb)
     write_json(os.path.join(out_dir, "metrics.json"), metrics)
 
-    # Build WeChat article with real numbers
-    vals = {
-        "BB84_AUC_THRESH": f"{metrics['bb84']['threshold']['auc']:.3f}",
-        "BB84_AUC_RBF": f"{metrics['bb84']['svm_rbf']['auc']:.3f}",
-        "BB84_AUC_QSVM": f"{metrics['bb84']['qsvm']['auc']:.3f}",
-        "BB84_ACC_QSVM": f"{metrics['bb84']['qsvm']['acc']:.3f}",
-        "ODMR_AUC_RBF": f"{metrics['odmr']['svm_rbf']['auc']:.3f}",
-        "ODMR_AUC_QSVM": f"{metrics['odmr']['qsvm']['auc']:.3f}",
-        "ODMR_ACC_QSVM": f"{metrics['odmr']['qsvm']['acc']:.3f}",
-        "KERNEL_MAX_DIFF": f"{metrics['kernel_bench']['max_abs_diff_pl_vs_qiskit']:.3e}",
-    }
-    build_wechat_article(os.path.join("docs", "wechat_article.md"), vals)
-    print("[DONE] Wrote docs/wechat_article.md and docs/figures/*.png")
+    print("[DONE] Wrote docs/figures/*.png")
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="qmsl", description="Quantum Measurement–Driven Security Lab (QKD+ODMR+QML)")

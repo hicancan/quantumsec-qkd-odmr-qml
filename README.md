@@ -10,10 +10,7 @@ This project demonstrates how quantum measurement statistics can serve as a "sec
 
 - **Task A (QKD / BB84):** Simulates the BB84 protocol to generate quantum bit error rates (QBER). We map QBER to information-theoretic **Secret Key Rate (SKR)** and use Quantum SVMs (QSVM) to detect eavesdropping attacks (IDS-style).
 - **Task B (NV-ODMR):** Simulates NV-center ODMR spectroscopy. We extract spectral features to detect magnetic field anomalies or sensor integrity issues using quantum kernels.
-- **Hard-core Reproducibility:** The *same quantum kernel feature map* is implemented and cross-validated across **PennyLane**, **Qiskit Aer**, **Cirq**, and **CUDA-Q**.
-- **Automated Reporting:** Generates metric JSONs, figures, and an auto-filled WeChat-style Markdown article.
-
-> **Deliverables:** CLI tools, rigorous pytest suite, bibliography, and ready-to-publish analysis.
+- **Reproducibility:** The *same quantum kernel feature map* is implemented and cross-validated across **PennyLane**, **Qiskit Aer**, **Cirq**, and **CUDA-Q**.
 
 ## Quick start
 
@@ -31,22 +28,22 @@ pip install -r requirements.txt
 
 > **Note:** If you already have a quantum stack installed (PennyLane, Qiskit, Cirq, CUDA-Q, QuTiP, SymPy), you can skip the full requirements install. CUDA-Q is optional if you don't have a compatible GPU/environment.
 
-### 2) Install package (Editable mode)
+### 2) Run with Explicit Environment
+
+We avoid `pip install -e .` to maintain strict environment control and prevent implicit path magic. Instead, explicitly set `PYTHONPATH` or use the provided wrapper script:
 
 ```bash
-pip install -e .
-```
+# Option A: Helper Script (Recommended)
+./scripts/run_all.sh
 
-### 3) Run the full pipeline (One command)
-
-```bash
+# Option B: Manual Execution
+export PYTHONPATH=$(pwd)/src
 python -m qmsl.cli run-all --seed 0 --out results
 ```
 
 **Outputs:**
 - `results/metrics.json`: All computed metrics.
 - `docs/figures/*.png`: Generated ROC curves, confusion matrices, and data plots.
-- `docs/wechat_article.md`: A summary article filled with the actual metrics from your run.
 
 ### 4) Run individual modules
 
@@ -88,7 +85,7 @@ The project connects physical measurements to security metrics. For the BB84 pro
 The secure key fraction is approximated by:
 
 $$
-\text{key\_fraction} \approx \max(0, 1 - 2 H_2(Q))
+\text{key-fraction} \approx \max(0, 1 - 2 H_2(Q))
 $$
 
 Where $Q$ is the Quantum Bit Error Rate (QBER), and $H_2$ is the binary entropy function:
@@ -100,10 +97,10 @@ $$
 The final rate is:
 
 $$
-\text{SKR} = \text{sift\_rate} \cdot \text{key\_fraction}
+\text{SKR} = \text{sift-rate} \cdot \text{key-fraction}
 $$
 
 When $Q$ exceeds ~11%, $H_2(Q)$ is large enough that the key fraction drops to zero, indicating no secure key can be distilled.
 
 ## License
-MIT (for coursework/demo purposes).
+MIT

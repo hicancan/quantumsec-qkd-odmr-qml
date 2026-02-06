@@ -14,4 +14,4 @@ cd "$REPO_ROOT"
 # Run
 PYTHONPATH="$REPO_ROOT/src" python -m qmsl.cli run-all --seed 0 --out results
 
-echo "Done. See docs/wechat_article.md and docs/figures/"
+echo "Done. Results saved to results/ and docs/figures/"
